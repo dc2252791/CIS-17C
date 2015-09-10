@@ -8,12 +8,12 @@ template <class T>
 class Array
 {
 private:
-		T *aptr;
-		T cols;
-		T array1;
-		T array2;
-		void subError() {};
-		void memError() {};
+	T *aptr;
+	T cols;
+	T array1;
+	T array2;
+	void subError() {};
+	void memError() {};
 public:
 	Array();
 	Array(T array1);
