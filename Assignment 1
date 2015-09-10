@@ -1,0 +1,66 @@
+#ifndef ARRAY_H
+#define ARRAY_H
+
+#include <iostream>
+using namespace std;
+
+template <class T> 
+class Array
+{
+private:
+		T *aptr;
+		T cols;
+		T array1;
+		T array2;
+		void subError() {};
+		void memError() {};
+public:
+	Array();
+	Array(T array1);
+	~Array();
+	int *filAray(T);
+	int **filAray(T*, T);
+	void prntAry(T *, T);
+	void prntAry(T **, T *, T);
+};
+
+template <class T>
+Array<int>::Array()
+{
+	*aptr = 0;
+	cols = 10;
+	array1 = 0;
+	array2 = 0;
+}
+template <class T>
+Array<float>::Array(T array1)
+{
+	this->array1 = array1;
+}
+template <class T>
+Array<T>::~Array()
+{
+	if ((array1) || (array2 > 0))
+		delete[] aptr;
+}
+template <class T>
+int Array<T>::*filAray(T cols)
+{
+	return cols;
+}
+template<class T>
+int Array<T>::**filAray(T *array1, T cols)
+{
+	return array1;
+}
+template <class T>
+void Array<T>::prntAry(T *array1, T cols)
+{
+	cout << array1;
+}
+template <class T>
+void Array<T>::prntAry(T **array2, T *array1, T cols)
+{
+	cout << array2 << array1;
+}
+#endif
